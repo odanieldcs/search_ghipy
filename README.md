@@ -1,10 +1,8 @@
 # Getting Started
 
-This project is a simple application that allows you to search for gifs on Giphy and save the search history of the user.
+This project is a simple application that allows you to search for gifs on Giphy and save the search history of the user. To execute this project, you need to follow the steps below.
 
-To execute this project, you need to follow the steps below.
-
-Consider that you have [Node.js](https://nodejs.org/en/) installed on your machine and PostgreSQL database.
+You need have [Node.js](https://nodejs.org/en/) installed on your machine and [PostgreSQL](https://www.postgresql.org/) database.
 
 ## Setup
 
