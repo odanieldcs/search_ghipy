@@ -9,7 +9,7 @@ You need have [Node.js](https://nodejs.org/en/) installed on your machine and [P
 Follow these steps to get your development environment set up:
 
 1. Create a database on your PostgreSQL server.
-2. Create a `.env.local` file in the root of the project and add the following environment variables or follow the `.env.example` file:
+2. Create a `.env.local` and `.env` file in the root of the project and add the following environment variables or follow the `.env.example` file:
    1. `API_KEY` - API key provided by Giphy.
    2. `DATABASE_URL` - URL to connection database, with username, password, host, port, and database name.
 
