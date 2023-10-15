@@ -1,0 +1,9 @@
+.row {
+	@apply flex mt-8;
+
+}
+.buttonNextPage,
+.buttonPrevPage {
+	@apply bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 mr-4 rounded-xl;
+	@apply transition-colors duration-200 ease-in-out;
+}

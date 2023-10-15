@@ -1,0 +1,7 @@
+.box {
+	@apply grid grid-cols-4 gap-6 relative;
+}
+
+.picture {
+	@apply relative w-auto h-40 md:h-64 lg:h-72 rounded-lg overflow-hidden;
+}

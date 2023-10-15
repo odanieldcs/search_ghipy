@@ -1,0 +1,14 @@
+.item {
+	@apply flex flex-1 mb-2 rounded-md;
+	@apply bg-gray-50;
+	@apply border border-gray-300 hover:border-gray-400;
+}
+
+.item a {
+	@apply w-full p-1 px-3 text-sm text-gray-700 rounded-xl;
+}
+
+.item button {
+	@apply p-0 px-3 rounded-md text-gray-600;
+	@apply bg-gray-100 hover:bg-gray-200;
+}

@@ -1,0 +1,22 @@
+.box {
+	@apply bg-white rounded-md shadow-md p-4 mt-1;
+	@apply absolute z-10 flex flex-col mt-14 min-w-[420px];
+}
+
+.buttonCleanHistory {
+	@apply text-gray-400 hover:text-gray-700;
+	@apply text-sm underline text-left;
+}
+
+.header {
+	@apply flex justify-between mb-3;
+}
+
+.header p {
+	@apply text-sm text-gray-500 mr-4;
+}
+
+.header button {
+	@apply p-0 px-2 rounded-xl text-sm text-gray-500;
+	@apply bg-gray-100 hover:bg-gray-200;
+}

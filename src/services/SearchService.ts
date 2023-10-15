@@ -1,52 +1,34 @@
+import { SearchResultType } from '@/types';
 import axios from 'axios';
-// function to get Data
-export async function search(query: string): Promise<GifSearchResult> {
-	const apiKey = 'pLURtkhVrUXr3KG25Gy5IvzziV5OrZGa';
-	const apiUrl = 'https://api.giphy.com/v1/gifs/search';
-	const limit = 25;
+
+export async function searchContent(
+	query: string,
+	offset?: number
+): Promise<SearchResultType> {
+	const apiUrl = 'http://localhost:3000/api/search';
+	const limit = 8;
 
 	const response: any = await axios.get(apiUrl, {
 		params: {
-			api_key: apiKey,
 			q: query,
 			limit: limit,
+			offset: offset || 0,
 		},
 	});
 
-	const extractedData = extractData(response.data);
-	const totalPages = getPages(limit, response.data.pagination.total_count);
+	const { data } = response;
 
-	return {
-		items: extractedData,
-		pages: totalPages ?? 0,
+	const result = {
+		items: [],
+		total: 0,
+		offset: 0,
 	};
+
+	if (data && data.items.length > 0) {
+		result.items = data.items;
+		result.total = data.total;
+		result.offset = data.offset;
+	}
+
+	return result;
 }
-
-function extractData(data: any): GifResult[] {
-	const extractedData = data.data.map((item: any) => ({
-		id: item.id,
-		title: item.title,
-		url: item.images.downsized_medium.url,
-	}));
-
-	return extractedData;
-}
-
-// function to extract pages to paginate
-export function getPages(limit: number, total: number) {
-	// retrieve total pages
-	const pages = Math.ceil(total / limit);
-
-	return pages;
-}
-
-type GifResult = {
-	id: string;
-	title: string;
-	url: string;
-};
-
-export type GifSearchResult = {
-	items: GifResult[];
-	pages: number;
-};
